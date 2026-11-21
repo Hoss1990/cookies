@@ -19,8 +19,8 @@ function Hero() {
       <div className="relative mx-auto grid max-w-[1280px] items-center gap-12 px-5 py-14 md:px-12 lg:grid-cols-2 lg:py-20">
         <div>
           <span className="inline-flex animate-fadeUp items-center gap-2 rounded-full bg-pop/10 px-4 py-1.5 text-xs font-bold text-popdeep"><Icon n="bakery_dining" className="!text-[18px]" /> Façonné à la main • Cookies and Co</span>
-          <h1 className="mt-5 animate-fadeUp font-display text-[38px] font-bold leading-[46px] tracking-tight [animation-delay:120ms] md:text-[56px] md:leading-[64px]">
-            L'Art du Cookie <span className="bg-gradient-to-r from-coral to-pop bg-clip-text italic text-transparent">Pur Beurre</span> & Chocolat Intense
+          <h1 className="mt-5 animate-fadeUp font-display text-[32px] font-bold leading-[46px] tracking-tight [animation-delay:120ms] md:text-[56px] md:leading-[64px]">
+            Un véritable goût  <span className="bg-gradient-to-r from-coral to-pop bg-clip-text italic text-transparent">de fait maison </span> & authentique
           </h1>
           <p className="mt-5 max-w-lg animate-fadeUp text-[17px] leading-relaxed text-cacao/70 [animation-delay:240ms]">Des produits prêts à savourer, sans prise de tête !</p>
           <div className="mt-7 flex animate-fadeUp flex-wrap gap-3 [animation-delay:360ms]">

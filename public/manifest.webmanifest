@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Cookies & Co – Biscuiterie Artisanale",
   "short_name": "Cookies & Co",
-  "description": "Cookies artisanaux pur beurre & chocolat, boîtes prêtes à cuire. Commande via WhatsApp.",
+  "description": "Des produits prêts à savourer, sans prise de tête ! Commande via WhatsApp.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",

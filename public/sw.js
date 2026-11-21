@@ -1,5 +1,5 @@
 // Service worker Cookies & Co — change VERSION pour forcer la mise à jour du cache.
-const VERSION = 'cookies-co-v1';
+const VERSION = 'cookies-co-v2';
 const SHELL = ['/', '/offline.html', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {

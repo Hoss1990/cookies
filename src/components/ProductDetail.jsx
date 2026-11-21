@@ -39,7 +39,7 @@ function Gallery({ p, i, setI, fav, setFav }) {
   const arrow = 'grid h-10 w-10 place-items-center rounded-full bg-white/85 text-cacao shadow backdrop-blur transition hover:bg-white active:scale-90';
 
   return (
-    <div className="self-start lg:sticky lg:top-24">
+    <div className="min-w-0 self-start lg:sticky lg:top-24">
       <div onTouchStart={onStart} onTouchEnd={onEnd} className="group relative aspect-[4/5] max-h-[78vh] w-full overflow-hidden rounded-3xl bg-biscuit shadow-warm">
         {/* Fond flouté de la même photo : remplit tout le cadre, aucun vide */}
         <img src={imgs[i]} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-125 object-cover opacity-80 blur-2xl" />
@@ -114,33 +114,33 @@ export default function ProductDetail({ p, others }) {
   ];
 
   return (
-    <div className="pb-20 md:pb-0">
+    <div className="overflow-x-clip pb-20 md:pb-0">
       <div className="mx-auto max-w-[1280px] px-5 md:px-12">
         <nav className="flex items-center gap-2 py-5 text-xs text-cacao/60">
           <Link href="/" className="hover:text-pop">Accueil</Link>/<Link href="/#creations" className="hover:text-pop">{p.cat === 'cuire' ? 'Prêts-à-cuire' : 'Biscuits prêts'}</Link>/<span className="font-semibold text-cacao">{p.name}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
           {/* Galerie */}
           <Gallery p={p} i={img} setI={setImg} fav={fav} setFav={setFav} />
 
           {/* Infos */}
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-5 sm:space-y-6">
             {p.rating && <div className="flex items-center gap-2 text-sm"><Stars n={p.rating} /><b>{p.rating.toFixed(1)} / 5</b><span className="text-cacao/60">• {p.reviews} avis vérifiés</span></div>}
             <div>
-              <h1 className="font-display text-[38px] font-bold leading-tight md:text-5xl">{p.name}</h1>
+              <h1 className="font-display text-[30px] font-bold leading-tight sm:text-[38px] md:text-5xl">{p.name}</h1>
               <p className="mt-1 font-display text-2xl italic text-terra">{p.subtitle}</p>
             </div>
             <p className="text-cacao/70">{p.desc}</p>
             <div className="flex items-center gap-3">
-              <span className="font-display text-4xl font-bold">{fmt(price)}</span>
+              <span className="font-display text-3xl font-bold sm:text-4xl">{fmt(price)}</span>
               {p.old && <><span className="text-sm text-cacao/50 line-through">{fmt(p.old)}</span><span className="rounded-full bg-terrasoft px-3 py-1 text-xs font-bold text-terra">-{Math.round((1 - p.price / p.old) * 100)}% Lancement</span></>}
             </div>
 
             {p.variants && (
-              <div className="rounded-2xl bg-cream p-5">
+              <div className="rounded-2xl bg-cream p-4 sm:p-5">
                 <p className="mb-3 font-display text-lg font-semibold">{p.variantTitle || 'Choix du format'}</p>
-                <div className="grid gap-3 sm:grid-cols-3">
+                <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
                   {p.variants.map((v) => (
                     <button key={v.name} onClick={() => { setVariant(v.name); const k = p.gallery.indexOf(v.img); if (k >= 0) setImg(k); }} className={`rounded-xl border-2 bg-white p-3 text-left transition hover:-translate-y-0.5 ${variant === v.name ? 'border-terra shadow-warm' : 'border-transparent'}`}>
                       <span className="block text-sm font-bold">{v.name}</span><span className="text-xs text-cacao/60">{v.desc}</span>
@@ -151,7 +151,7 @@ export default function ProductDetail({ p, others }) {
             )}
 
             {p.compo && (
-              <div className="rounded-2xl bg-cream p-5">
+              <div className="rounded-2xl bg-cream p-4 sm:p-5">
                 <p className="mb-3 font-display text-lg font-semibold">Composition de la box</p>
                 <div className="grid grid-cols-3 gap-3">
                   {p.compo.map(([n, t]) => (
@@ -161,17 +161,17 @@ export default function ProductDetail({ p, others }) {
               </div>
             )}
 
-            <div className="flex gap-3">
-              <div className="flex items-center rounded-full bg-biscuit px-2">
-                <button onClick={() => setQty(Math.max(1, qty - 1))} className="p-3 transition hover:text-terra" aria-label="Moins"><Icon n="remove" /></button>
-                <span className="w-8 text-center font-bold">{qty}</span>
-                <button onClick={() => setQty(qty + 1)} className="p-3 transition hover:text-terra" aria-label="Plus"><Icon n="add" /></button>
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="flex h-12 shrink-0 items-center rounded-full bg-biscuit px-1 sm:h-14 sm:px-2">
+                <button onClick={() => setQty(Math.max(1, qty - 1))} className="grid h-10 w-10 place-items-center rounded-full transition hover:text-terra active:scale-90" aria-label="Moins"><Icon n="remove" className="!text-[20px]" /></button>
+                <span className="w-6 text-center text-sm font-bold sm:w-8 sm:text-base">{qty}</span>
+                <button onClick={() => setQty(qty + 1)} className="grid h-10 w-10 place-items-center rounded-full transition hover:text-terra active:scale-90" aria-label="Plus"><Icon n="add" className="!text-[20px]" /></button>
               </div>
-              <button onClick={onAdd} className={`btn flex-1 py-4 text-white ${done ? 'bg-[#16a34a]' : 'bg-cacao hover:-translate-y-0.5 hover:shadow-glow'}`}>
-                <Icon n={done ? 'check_circle' : 'shopping_bag'} fill /> {done ? 'Délicieusement Ajouté !' : `Ajouter au Panier • ${fmt(price * qty)}`}
+              <button onClick={onAdd} className={`btn h-12 min-w-0 flex-1 gap-1.5 whitespace-nowrap px-3 text-[13px] text-white sm:h-14 sm:gap-2 sm:px-6 sm:text-base ${done ? 'bg-[#16a34a]' : 'bg-cacao hover:-translate-y-0.5 hover:shadow-glow'}`}>
+                <Icon n={done ? 'check_circle' : 'shopping_bag'} fill className="!hidden !text-[20px] sm:!inline-block" />
+                {done ? 'Ajouté !' : <><span className="sm:hidden">Ajouter</span><span className="hidden sm:inline">Ajouter au panier</span><span className="opacity-60">·</span><span>{fmt(price * qty)}</span></>}
               </button>
             </div>
-            <button onClick={() => { add(p, item()); setOpen(true); }} className="btn-ghost w-full"><Icon n="chat" /> Commander maintenant via WhatsApp</button>
 
             {p.cat === 'cuire' && (
               <div className="rounded-2xl border border-terra/20 bg-terrasoft/50 p-5">
@@ -247,9 +247,9 @@ export default function ProductDetail({ p, others }) {
       </section>
 
       {/* Barre mobile sticky */}
-      <div className={`fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-cacao/10 bg-white/95 p-3 shadow-2xl backdrop-blur transition-transform duration-300 md:hidden ${bar ? 'translate-y-0' : 'translate-y-full'}`}>
-        <div className="leading-tight"><b className="block">{p.name}</b><span className="text-sm text-cacao/60">{fmt(price * qty)}</span></div>
-        <button onClick={() => { add(p, item()); setOpen(true); }} className="btn-dark !py-2.5 text-sm"><Icon n="shopping_bag" fill /> Commander</button>
+      <div className={`fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-cacao/10 bg-white/95 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-2xl backdrop-blur transition-transform duration-300 md:hidden ${bar ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="min-w-0 leading-tight"><b className="block truncate text-sm">{p.name}</b><span className="text-xs text-cacao/60">{fmt(price * qty)}</span></div>
+        <button onClick={() => { add(p, item()); setOpen(true); }} className="btn-dark shrink-0 !px-5 !py-2.5 text-sm"><Icon n="shopping_bag" fill className="!text-[18px]" /> Commander</button>
       </div>
     </div>
   );

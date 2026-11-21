@@ -103,10 +103,9 @@ export function ProductSkeleton() {
             </div>
             <Sk c="h-10 w-40 rounded-xl" />
             <div className="flex gap-3">
-              <Sk c="h-14 w-36 shrink-0 rounded-full" />
-              <Sk c="h-14 flex-1 rounded-full" />
+              <Sk c="h-12 w-28 shrink-0 rounded-full sm:h-14 sm:w-36" />
+              <Sk c="h-12 flex-1 rounded-full sm:h-14" />
             </div>
-            <Sk c="h-14 w-full rounded-full" />
             <div className="space-y-4 rounded-2xl bg-biscuit/60 p-5">
               {[0, 1, 2].map((k) => <Sk key={k} c="h-5 w-full rounded-lg" />)}
             </div>
