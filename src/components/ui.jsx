@@ -5,6 +5,14 @@ export const Icon = ({ n, className = '', fill, style }) => (
   <span style={style} className={`material-symbols-outlined ${fill ? 'fill' : ''} ${className}`}>{n}</span>
 );
 
+export const InstagramIcon = ({ size = 22, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={`shrink-0 ${className}`}>
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 // <img> avec squelette animé tant que la photo charge, puis fondu. Le parent doit être `relative`.
 export function Img({ className = '', onLoad, onError, ...props }) {
   const ref = useRef(null);

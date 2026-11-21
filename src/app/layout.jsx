@@ -10,7 +10,7 @@ const sans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--f-sans', displ
 
 export const metadata = {
   title: 'Cookies & Co | Biscuiterie Artisanale & Gourmande',
-  description: 'Cookies artisanaux pur beurre & chocolat intense, boîtes prêtes à cuire. Maison Kanoun & Fils — commande via WhatsApp.',
+  description: 'Cookies artisanaux & chocolat intense, boîtes prêtes à cuire. Maison Kanoun & Fils — commande via WhatsApp.',
   applicationName: 'Cookies & Co',
   manifest: '/manifest.webmanifest',
   icons: {

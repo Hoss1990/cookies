@@ -5,6 +5,16 @@ import { Icon, Img, Reveal, Stars } from './ui';
 import { useCart } from './Cart';
 import { REVIEWS, fmt } from '@/lib/data';
 
+// Mélange de Fisher-Yates (copie, ne modifie pas le tableau d'origine)
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
 const CORE = [['cookie', 'Chocolat noir 55%', 'Dans nos cookies choco noix et choco addict'], ['restaurant', 'Beurre', 'Pour une pâte fondante et savoureuse'], ['eco', 'Noix & noisettes', 'Dans nos cookies choco noix et choco noisette'], ['spa', 'Vanille', 'Dans tous nos cookies surgelés']];
 
 // Galerie premium : cadre 4/5 constant, photo entière (jamais coupée) sur fond flouté de la même photo,
@@ -97,6 +107,12 @@ export default function ProductDetail({ p, others }) {
   const [fav, setFav] = useState(false);
   const [acc, setAcc] = useState(0);
   const [bar, setBar] = useState(false);
+  // « Vous aimerez aussi » : 2 produits aléatoires à chaque visite / chaque changement de produit.
+  // Tiré côté client après le montage (la page est statique, et cela évite tout décalage d'hydratation).
+  const [picks, setPicks] = useState(null);
+  useEffect(() => {
+    setPicks(shuffle(others).slice(0, 2));
+  }, [p.slug]);
   useEffect(() => {
     const h = () => setBar(window.scrollY > 500);
     h(); window.addEventListener('scroll', h, { passive: true });
@@ -110,7 +126,7 @@ export default function ProductDetail({ p, others }) {
   const ACC = [
     ['grain', 'Ingrédients', p.ing],
     ['info', 'Allergènes & Conseils nutritionnels', p.all],
-    ['local_shipping', 'Conservation & Livraison Express', `${p.cons} Livraison : expédition express réfrigérée sous 24h à 48h partout en Tunisie. Retrait offert le jour même à la boulangerie Kanoun & Fils.`],
+    ['kitchen', 'Conservation', p.cons],
   ];
 
   return (
@@ -175,8 +191,8 @@ export default function ProductDetail({ p, others }) {
 
             {p.cat === 'cuire' && (
               <div className="rounded-2xl border border-terra/20 bg-terrasoft/50 p-5">
-                <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-terra text-white"><Icon n="cookie" fill /></span><b className="font-display text-lg">Secret du Chef Kanoun</b><span className="rounded-full bg-terra px-2 py-0.5 text-[10px] font-bold uppercase text-white">À chaud</span></div>
-                <p className="mt-2 text-sm text-cacao/75">Préchauffez votre four à <b>180°C</b>. Disposez les portions sur une plaque avec papier sulfurisé et enfournez pendant <b>10 à 12 minutes</b> seulement. Laissez tiédir 3 minutes : le cœur sera parfaitement coulant et fondant.</p>
+                <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-terra text-white"><Icon n="cookie" fill /></span><b className="font-display text-lg">Astuces de cuisson</b><span className="rounded-full bg-terra px-2 py-0.5 text-[10px] font-bold uppercase text-white">À chaud</span></div>
+                <p className="mt-2 text-sm text-cacao/75">Préchauffez votre four à <b>180°C</b>. Disposez les portions sur une plaque avec papier sulfurisé et enfournez pendant <b>10 à 12 minutes</b> seulement. Laissez tiédir 15 minutes</p>
               </div>
             )}
 
@@ -216,8 +232,8 @@ export default function ProductDetail({ p, others }) {
           <div><p className="text-[11px] font-bold uppercase tracking-[.25em] text-terra">Accompagnements & Douceurs</p><h2 className="mt-1 font-display text-[30px] font-semibold">Vous aimerez aussi</h2></div>
           <Link href="/#creations" className="group hidden items-center gap-1 text-sm font-bold text-terra sm:flex">Voir tout le catalogue <Icon n="arrow_forward" className="!text-[18px] transition group-hover:translate-x-1" /></Link>
         </Reveal>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {others.map((o) => (
+        <div className="mt-8 grid min-h-[180px] gap-6 md:grid-cols-2">
+          {(picks || []).map((o) => (
             <Reveal key={o.slug}>
               <div className="flex gap-4 rounded-3xl bg-white p-5 shadow-warm transition hover:-translate-y-1 hover:shadow-glow">
                 <Link href={`/produit/${o.slug}`} className="relative w-32 shrink-0 overflow-hidden rounded-2xl bg-biscuit sm:w-40"><img src={o.img} alt={o.name} className="h-full w-full object-cover transition duration-500 hover:scale-105" /><span className={`absolute left-2 top-2 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase ${o.badgeCls}`}>{o.badge}</span></Link>

@@ -20,7 +20,9 @@ function Hero() {
         <div>
           <span className="inline-flex animate-fadeUp items-center gap-2 rounded-full bg-pop/10 px-4 py-1.5 text-xs font-bold text-popdeep"><Icon n="bakery_dining" className="!text-[18px]" /> Façonné à la main • Cookies and Co</span>
           <h1 className="mt-5 animate-fadeUp font-display text-[32px] font-bold leading-[46px] tracking-tight [animation-delay:120ms] md:text-[56px] md:leading-[64px]">
-            Un véritable goût  <span className="bg-gradient-to-r from-coral to-pop bg-clip-text italic text-transparent">de fait maison </span> & authentique
+            Un véritable goût{' '}
+            <span className="-mx-[0.12em] box-decoration-clone bg-gradient-to-r from-coral to-pop bg-clip-text px-[0.12em] italic text-transparent">de fait maison</span>{' '}
+            &amp; authentique
           </h1>
           <p className="mt-5 max-w-lg animate-fadeUp text-[17px] leading-relaxed text-cacao/70 [animation-delay:240ms]">Des produits prêts à savourer, sans prise de tête !</p>
           <div className="mt-7 flex animate-fadeUp flex-wrap gap-3 [animation-delay:360ms]">
@@ -28,7 +30,7 @@ function Hero() {
             <Link href="/produit/taste-me-box" className="btn-ghost"><Icon n="local_fire_department" className="text-coral" /> La Box Prêt-à-Cuire</Link>
           </div>
           <div className="mt-10 grid max-w-md grid-cols-3 gap-4">
-            {[[100, 0, '', '%', 'Pur beurre & cacao pur'], [0, 0, '', '%', 'Arômes ou conservateurs'], [4.9, 1, '', '/5', '+1 200 gourmets conquis']].map(([to, d, pre, suf, l]) => (
+            {[[100, 0, '', '%', 'Fait main en atelier'], [0, 0, '', '%', 'Arômes ou conservateurs'], [4.9, 1, '', '/5', '+120 gourmets conquis']].map(([to, d, pre, suf, l]) => (
               <div key={l}><p className="font-display text-3xl font-bold text-pop"><Counter to={to} dec={d} pre={pre} suf={suf} /></p><p className="text-xs text-cacao/60">{l}</p></div>
             ))}
           </div>
@@ -46,7 +48,7 @@ function Hero() {
           </div>
           <div className="absolute -bottom-6 -left-4 flex animate-wiggle items-center gap-3 rounded-2xl bg-white p-3 shadow-warm sm:-left-10">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-coral/15 text-coral"><Icon n="cookie" fill /></span>
-            <span className="text-xs leading-tight"><b className="block text-sm">Cuisson du Jour</b><span className="text-peri">Atelier Kanoun & Fils</span></span>
+            <span className="text-xs leading-tight"><b className="block text-sm">Cuisson du Jour</b><span className="text-peri">Cokiees & co</span></span>
           </div>
         </div>
       </div>
@@ -60,7 +62,7 @@ function Pillars() {
     <section className="border-y border-cacao/5 bg-gradient-to-r from-peri/5 via-pop/5 to-coral/10 py-5">
       <p className="mb-3 text-center text-[11px] font-bold uppercase tracking-[.25em] text-pop">Les Piliers du Goût</p>
       <div className="overflow-hidden">
-        <div className="flex w-max animate-marquee gap-4 hover:[animation-play-state:paused]">
+        <div className="flex w-max animate-marquee gap-4 [animation-duration:80s] hover:[animation-play-state:paused]">
           {row.map(([ic, l], i) => (
             <span key={i} className="flex items-center gap-2 whitespace-nowrap rounded-full border border-cacao/5 bg-white px-5 py-2.5 text-sm font-semibold shadow-warm"><Icon n={ic} className="text-coral !text-[20px]" />{l}</span>
           ))}

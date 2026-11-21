@@ -1,9 +1,9 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Icon } from './ui';
+import { Icon, InstagramIcon } from './ui';
 import { useCart } from './Cart';
-import { IMG, PRODUCTS, fmt } from '@/lib/data';
+import { IG, IMG, PRODUCTS, fmt } from '@/lib/data';
 
 const LINKS = [['Accueil', '/'], ['Nos Créations', '/#creations'], ['Coffrets Gourmands', '/produit/taste-me-box'], ['Avis', '/#avis']];
 
@@ -53,6 +53,9 @@ export default function Nav() {
               </div>
             )}
           </div>
+          <a href={IG} target="_blank" rel="noreferrer" aria-label="Instagram Cookies & Co" className="hidden h-10 w-10 items-center justify-center rounded-full text-cacao transition hover:bg-biscuit hover:text-pop sm:flex">
+            <InstagramIcon />
+          </a>
           <button onClick={() => setOpen(true)} className="btn-dark !h-10 !w-10 !p-0 text-sm sm:!h-auto sm:!w-auto sm:!px-4 sm:!py-2.5" aria-label="Panier">
             <span className="relative">
               <Icon n="shopping_bag" fill />
@@ -66,6 +69,7 @@ export default function Nav() {
       <div className={`grid transition-all duration-300 lg:hidden ${menu ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
         <ul className="overflow-hidden bg-vanilla px-5 font-semibold">
           {LINKS.map(([l, h]) => <li key={l}><Link href={h} onClick={() => setMenu(false)} className="block border-b border-cacao/5 py-3">{l}</Link></li>)}
+          <li className="sm:hidden"><a href={IG} target="_blank" rel="noreferrer" onClick={() => setMenu(false)} className="flex items-center gap-2 py-3"><InstagramIcon size={20} className="text-pop" /> Instagram</a></li>
         </ul>
       </div>
     </header>

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import { Icon } from './ui';
-import { IMG, WA } from '@/lib/data';
+import { Icon, InstagramIcon } from './ui';
+import { IG, IMG, WA } from '@/lib/data';
 
 const NAV = [['Accueil', '/'], ['Nos Créations', '/#creations'], ['Coffrets Cadeaux', '/produit/taste-me-box'], ['Notre Savoir-faire', '/#histoire'], ['Avis Gourmands', '/#avis']];
 
@@ -16,7 +16,7 @@ export default function Footer() {
             <span className="font-display text-xl font-bold">Cookies & Co</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cacao/70">L'artisanat pâtissier porté à son zénith. Des cookies généreux confectionnés chaque matin au cœur de notre atelier avec des chocolats grands crus, beurre de baratte et noisettes torréfiées.</p>
-          <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-terra"><Icon n="verified" className="!text-[18px]" /> Beurre AOP • Œufs plein air • Farines locales</p>
+          <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-terra"><Icon n="verified" className="!text-[18px]" /> Beurre • Œufs plein air • Farines locales</p>
         </div>
 
         {/* Navigation */}
@@ -31,13 +31,13 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="space-y-3 text-sm">
-          <h4 className="font-display text-lg font-semibold">Maison & Contact</h4>
+          <h4 className="font-display text-lg font-semibold">Contact</h4>
           <p className="flex gap-2"><Icon n="storefront" className="shrink-0 text-pop" /><span><b>Boutique & Fournil</b><br /><span className="text-cacao/70">Produit par boulangerie Kanoun et Fils</span></span></p>
           <a href="tel:+21658358580" className="flex items-center gap-2 font-semibold transition hover:text-pop"><Icon n="call" className="shrink-0 text-pop" />58 358 580</a>
-          <p className="flex gap-2 text-cacao/70"><Icon n="schedule" className="shrink-0 text-pop" />Fournées fraîches 7j/7 de 08h30 à 20h00</p>
           <a href={`https://wa.me/${WA}?text=${encodeURIComponent('Bonjour Cookies & Co 🍪')}`} target="_blank" rel="noreferrer" className="btn mt-1 bg-[#25D366] px-4 py-2 text-xs text-white hover:-translate-y-0.5 hover:shadow-lg sm:text-sm">
             <Icon n="chat" fill className="!text-[18px]" /> Écrire sur WhatsApp
           </a>
+          <a href={IG} target="_blank" rel="noreferrer" aria-label="Instagram Cookies & Co" className="flex items-center gap-2 font-semibold transition hover:text-pop"><InstagramIcon size={20} className="text-pop" />@cookies__and_co</a>
         </div>
       </div>
 

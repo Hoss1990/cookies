@@ -11,5 +11,5 @@ export const generateMetadata = ({ params }) => {
 export default function Page({ params }) {
   const p = bySlug(params.slug);
   if (!p) notFound();
-  return <ProductDetail p={p} others={PRODUCTS.filter((x) => x.slug !== p.slug).slice(0, 2)} />;
+  return <ProductDetail p={p} others={PRODUCTS.filter((x) => x.slug !== p.slug)} />;
 }
