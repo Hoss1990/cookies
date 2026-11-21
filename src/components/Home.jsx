@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Counter, Icon, Reveal, Stars } from './ui';
+import { Counter, Icon, Img, Reveal, Stars } from './ui';
 import ProductCard from './ProductCard';
 import { useCart } from './Cart';
 import { IMG, PRODUCTS, REVIEWS, bySlug, fmt } from '@/lib/data';
@@ -36,7 +36,7 @@ function Hero() {
         <div className="relative mx-auto w-full max-w-md animate-fadeUp [animation-delay:200ms]">
           <div className="animate-float rounded-3xl border border-cacao/5 bg-white p-4 shadow-warm">
             <div className="relative overflow-hidden rounded-2xl bg-biscuit">
-              <img src={croq.img} alt={croq.name} className="aspect-square w-full object-cover" />
+              <Img src={croq.img} alt={croq.name} className="aspect-square w-full object-cover" />
               <span className="absolute left-3 top-3 rounded-full bg-terra px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white">Signature Café Noir</span>
             </div>
             <div className="flex items-center justify-between px-1 pb-1 pt-4">

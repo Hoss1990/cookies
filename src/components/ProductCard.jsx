@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Icon, Stars } from './ui';
+import { Icon, Img, Stars } from './ui';
 import { useCart } from './Cart';
 import { fmt } from '@/lib/data';
 
@@ -16,7 +16,7 @@ export default function ProductCard({ p, i = 0 }) {
   return (
     <article style={{ animationDelay: `${i * 90}ms` }} className="group relative flex animate-fadeUp flex-col overflow-hidden rounded-2xl border border-cacao/5 bg-white shadow-warm transition duration-300 hover:-translate-y-2 hover:shadow-glow sm:rounded-3xl">
       <Link href={`/produit/${p.slug}`} className="relative block aspect-square overflow-hidden bg-biscuit">
-        <img src={p.img} alt={p.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+        <Img src={p.img} alt={p.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
         {/* Badge : petit et tronqué sur mobile pour ne jamais cacher la photo ni le cœur */}
         <span className={`absolute left-1.5 top-1.5 max-w-[calc(100%-2.5rem)] truncate rounded-full px-2 py-0.5 text-[8px] font-extrabold uppercase tracking-wide sm:left-3 sm:top-3 sm:max-w-none sm:px-3 sm:py-1 sm:text-[10px] ${p.badgeCls}`}>{p.badge}</span>
         {/* Poids : sur la photo seulement à partir de sm, sous le prix sur mobile */}

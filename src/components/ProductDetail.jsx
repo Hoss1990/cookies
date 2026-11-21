@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { Icon, Reveal, Stars } from './ui';
+import { Icon, Img, Reveal, Stars } from './ui';
 import { useCart } from './Cart';
 import { REVIEWS, fmt } from '@/lib/data';
 
@@ -44,7 +44,7 @@ function Gallery({ p, i, setI, fav, setFav }) {
         {/* Fond flouté de la même photo : remplit tout le cadre, aucun vide */}
         <img src={imgs[i]} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-125 object-cover opacity-80 blur-2xl" />
         <button type="button" onClick={() => setZoom(true)} aria-label="Agrandir la photo" className="absolute inset-0 cursor-zoom-in">
-          <img key={i} src={imgs[i]} alt={`${p.name} – photo ${i + 1}`} style={fade} className="h-full w-full animate-fadeUp object-contain" />
+          <Img key={i} src={imgs[i]} alt={`${p.name} – photo ${i + 1}`} style={fade} className="h-full w-full object-contain" />
         </button>
 
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-2 sm:left-4 sm:top-4">

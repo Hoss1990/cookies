@@ -17,4 +17,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .btn-pop { @apply btn bg-gradient-to-r from-coral to-pop text-white px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base hover:-translate-y-0.5 hover:shadow-glow; }
 .btn-ghost { @apply btn border-2 border-cacao/15 bg-white/70 px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base hover:border-peri hover:text-peri; }
 .chip { @apply inline-flex items-center rounded-full bg-biscuit px-3 py-1 text-[11px] font-semibold border border-cacao/5; }
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .rv { opacity: 1; transform: none; } }
+.skeleton { overflow: hidden; @apply bg-cacao/[0.07]; }
+.skeleton::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent); animation: shimmer 1.4s ease-in-out infinite; }
+@keyframes shimmer { to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .skeleton::after { animation: none !important; } .rv { opacity: 1; transform: none; } }
