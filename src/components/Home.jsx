@@ -30,7 +30,7 @@ function Hero() {
             <Link href="/produit/taste-me-box" className="btn-ghost"><Icon n="local_fire_department" className="text-coral" /> La Box Prêt-à-Cuire</Link>
           </div>
           <div className="mt-10 grid max-w-md grid-cols-3 gap-4">
-            {[[100, 0, '', '%', 'Fait main en atelier'], [0, 0, '', '%', 'Arômes ou conservateurs'], [4.9, 1, '', '/5', '+120 gourmets conquis']].map(([to, d, pre, suf, l]) => (
+            {[[100, 0, '', '%', 'Fait main en atelier'], [0, 0, '', '%', 'Arômes ou conservateurs']].map(([to, d, pre, suf, l]) => (
               <div key={l}><p className="font-display text-3xl font-bold text-pop"><Counter to={to} dec={d} pre={pre} suf={suf} /></p><p className="text-xs text-cacao/60">{l}</p></div>
             ))}
           </div>
@@ -39,7 +39,7 @@ function Hero() {
           <div className="animate-float rounded-3xl border border-cacao/5 bg-white p-4 shadow-warm">
             <div className="relative overflow-hidden rounded-2xl bg-biscuit">
               <Img src={croq.img} alt={croq.name} className="aspect-square w-full object-cover" />
-              <span className="absolute left-3 top-3 rounded-full bg-terra px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white">Signature Café Noir</span>
+              <span className="absolute left-3 top-3 rounded-full bg-terra px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white">Pause café</span>
             </div>
             <div className="flex items-center justify-between px-1 pb-1 pt-4">
               <div><p className="font-display text-xl font-semibold">{croq.name}</p><p className="text-xs text-cacao/60">Infusion grains de café torréfiés & cacao amer</p></div>
@@ -108,14 +108,14 @@ function Secret() {
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-pop px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-wider text-white"><Icon n="oven_gen" className="!text-[18px]" /> Le secret des connaisseurs</span>
               <h2 className="mt-5 font-display text-[30px] font-semibold leading-tight md:text-[40px]">L'odeur du cookie chaud qui sort de <span className="italic text-coral">votre propre four</span>.</h2>
-              <p className="mt-4 text-vanilla/75">Recevez votre <b>Taste Me Box</b> surgelée. Disposez les 4 cookies prêts à cuire sur une plaque, enfournez 10 minutes à 175°C. La pâte caramélise, le chocolat fond… Vous servez un biscuit tiède à la texture inégalable.</p>
+              <p className="mt-4 text-vanilla/75">Recevez votre <b>Taste Me Box</b> surgelée. Disposez les 4 cookies prêts à cuire sur une plaque, Enfournez entre 10 et 12 min en fonction de la puissance de votre four. La pâte caramélise, le chocolat fond… Vous servez un biscuit tiède à la texture inégalable.</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {[['timer', '10 min chrono', 'Chaleur tournante 175°C', 'text-coral'], ['favorite', 'Moelleux total', 'Cœur coulant garanti', 'text-pop'], ['ac_unit', 'Surgelé', 'Prêt à enfourner', 'text-peri']].map(([ic, t, s, c]) => (
+                {[['timer', '10 min chrono', 'Chaleur tournante 175°C', 'text-coral'], ['favorite', "croustillant à l'extérieur tendre à l'intérieur", 'Cœur coulant garanti', 'text-pop'], ['ac_unit', 'Surgelé', 'Prêt à enfourner', 'text-peri']].map(([ic, t, s, c]) => (
                   <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-3 transition hover:-translate-y-1 hover:bg-white/10"><Icon n={ic} fill className={c} /><p className="mt-1 text-sm font-bold">{t}</p><p className="text-[11px] text-vanilla/60">{s}</p></div>
                 ))}
               </div>
               <button onClick={() => { add(box); setOpen(true); }} className="btn-pop mt-7"><Icon n="shopping_basket" /> Commander la Box ({fmt(box.price)})</button>
-              <a href="tel:+21658358580" className="mt-4 flex items-center gap-2 text-sm text-vanilla/80 hover:text-white"><Icon n="call" className="!text-[18px]" /> Commande express par téléphone : <b>58 358 580</b></a>
+              <a href="tel:+21658358580" className="mt-4 flex items-center gap-2 text-sm text-vanilla/80 hover:text-white"><Icon n="call" className="!text-[18px]" /> Commande par téléphone : <b>58 358 580</b></a>
             </div>
             <Link href="/produit/taste-me-box" className="mx-auto block w-full max-w-sm rotate-3 rounded-3xl bg-white p-4 text-cacao shadow-2xl transition duration-500 hover:rotate-0 hover:scale-105">
               <img src={box.img} alt={box.name} className="aspect-square w-full rounded-2xl bg-biscuit object-cover" />

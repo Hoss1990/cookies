@@ -15,7 +15,9 @@ export default function Footer() {
             <img src={IMG.logo} alt="Cookies & Co" className="h-11 w-11 rounded-full" />
             <span className="font-display text-xl font-bold">Cookies & Co</span>
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cacao/70">L'artisanat pâtissier porté à son zénith. Des cookies généreux confectionnés chaque matin au cœur de notre atelier avec des chocolats grands crus, beurre de baratte et noisettes torréfiées.</p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cacao/70">Cookies and Co est né du savoir-faire de Boulangerie Kanoun & Fils
+Derrière chaque création, il y a le même amour du fait main, le souci du détail et le goût des bonnes choses.
+Parce que chez nous, l'artisanat ne se limite pas au pain… il se décline aussi en cookies, préparés avec passion et savoir-faire.</p>
           <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-terra"><Icon n="verified" className="!text-[18px]" /> Beurre • Œufs plein air • Farines locales</p>
         </div>
 
@@ -43,7 +45,7 @@ export default function Footer() {
 
       {/* Bas de page */}
       <div className="mx-auto mt-10 flex max-w-[1280px] flex-col gap-3 border-t border-cacao/10 px-5 pt-6 text-xs text-cacao/60 sm:flex-row sm:items-center sm:justify-between md:px-12">
-        <p>© 2025 Cookies & Co. Tous droits réservés. • Artisanat certifié • Produit par boulangerie Kanoun et Fils</p>
+        <p>© 2025 Cookies & Co. Tous droits réservés. • Produit par boulangerie Kanoun et Fils</p>
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="group inline-flex items-center gap-1 self-start font-semibold text-cacao transition hover:text-pop sm:self-auto">
           Retour en haut <Icon n="arrow_upward" className="!text-[16px] transition group-hover:-translate-y-1" />
         </button>

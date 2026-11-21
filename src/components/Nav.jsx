@@ -28,8 +28,7 @@ export default function Nav() {
           <img src={IMG.logo} alt="Cookies & Co" className="h-9 w-9 rounded-full object-cover transition hover:rotate-12 sm:h-10 sm:w-10" />
           <span className="leading-tight">
             <span className="block font-display text-base font-bold sm:text-lg">Cookies & Co</span>
-            <span className="block text-[9px] font-bold uppercase tracking-[.2em] text-pop">Atelier Artisanal</span>
-          </span>
+      </span>
         </Link>
 
         <ul className="hidden items-center gap-6 text-sm font-semibold lg:flex">
