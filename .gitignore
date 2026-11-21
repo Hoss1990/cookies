@@ -1,0 +1,22 @@
+# dépendances
+node_modules
+
+# build Next.js
+.next
+out
+
+# variables d'environnement (garde .env.example si tu en crées un)
+.env
+.env*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# système / éditeur
+.DS_Store
+Thumbs.db
+.vscode
+*.tsbuildinfo
+next-env.d.ts

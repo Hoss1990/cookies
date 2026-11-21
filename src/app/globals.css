@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-vanilla font-sans text-cacao antialiased; overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined'; font-weight: 400; font-style: normal; line-height: 1;
+  display: inline-block; letter-spacing: normal; text-transform: none; white-space: nowrap;
+  direction: ltr; -webkit-font-smoothing: antialiased; font-variation-settings: 'FILL' 0; font-size: 22px;
+}
+.material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+.rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-full font-bold transition duration-200 active:scale-95; }
+.btn-dark { @apply btn bg-cacao text-vanilla px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base hover:-translate-y-0.5 hover:shadow-glow; }
+.btn-pop { @apply btn bg-gradient-to-r from-coral to-pop text-white px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base hover:-translate-y-0.5 hover:shadow-glow; }
+.btn-ghost { @apply btn border-2 border-cacao/15 bg-white/70 px-5 py-2.5 text-sm sm:px-6 sm:py-3 sm:text-base hover:border-peri hover:text-peri; }
+.chip { @apply inline-flex items-center rounded-full bg-biscuit px-3 py-1 text-[11px] font-semibold border border-cacao/5; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .rv { opacity: 1; transform: none; } }

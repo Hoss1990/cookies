@@ -1,0 +1,5 @@
+Fichiers attendus (renommez-les ou modifiez src/lib/images.js) :
+logo.png
+produits/taste-me-box-1..4.jpg  croq-cafe-1..2.jpg  choco-noix-1.jpg  choco-addict-1.jpg  choco-noisette-1.jpg
+produits/choco-chips-50g.jpg  choco-chips-100g.jpg   (une photo par format)
+atelier/atelier-boulangerie.jpg  galerie/instant-1..4.jpg

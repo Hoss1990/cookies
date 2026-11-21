@@ -1,0 +1,62 @@
+{
+  "id": "/",
+  "name": "Cookies & Co – Biscuiterie Artisanale",
+  "short_name": "Cookies & Co",
+  "description": "Cookies artisanaux pur beurre & chocolat, boîtes prêtes à cuire. Commande via WhatsApp.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "fr",
+  "dir": "ltr",
+  "background_color": "#fff8f1",
+  "theme_color": "#23120f",
+  "categories": [
+    "food",
+    "shopping"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nos créations",
+      "short_name": "Créations",
+      "url": "/#creations",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Taste Me Box",
+      "short_name": "Taste Me Box",
+      "url": "/produit/taste-me-box",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
