@@ -137,7 +137,6 @@ function Reviews() {
         <Reveal className="text-center">
           <p className="text-[11px] font-bold uppercase tracking-[.25em] text-pop">Avis Vérifiés</p>
           <h2 className="mt-2 font-display text-[30px] font-semibold md:text-[40px]">Les Mots de nos Gourmets</h2>
-          <p className="mt-2 text-cacao/70">Plus de 1 200 adeptes ont partagé leur coup de foudre sucré.</p>
         </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {REVIEWS.map((r, i) => (
