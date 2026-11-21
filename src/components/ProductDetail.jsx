@@ -192,7 +192,7 @@ export default function ProductDetail({ p, others }) {
             {p.cat === 'cuire' && (
               <div className="rounded-2xl border border-terra/20 bg-terrasoft/50 p-5">
                 <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-terra text-white"><Icon n="cookie" fill /></span><b className="font-display text-lg">Astuces de cuisson</b><span className="rounded-full bg-terra px-2 py-0.5 text-[10px] font-bold uppercase text-white">À chaud</span></div>
-                <p className="mt-2 text-sm text-cacao/75">Préchauffez votre four à <b>180°C</b>. Disposez les portions sur une plaque avec papier sulfurisé et enfournez pendant <b>10 à 12 minutes</b> seulement. Laissez tiédir 15 minutes</p>
+                <p className="mt-2 text-sm text-cacao/75">Préchauffez votre four à <b>175°C</b>. Disposez les portions sur une plaque avec papier sulfurisé et enfournez pendant <b>10 à 12 minutes</b> seulement. Laissez tiédir 15 minutes</p>
               </div>
             )}
 

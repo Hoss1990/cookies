@@ -18,7 +18,6 @@ export default function Footer() {
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cacao/70">Cookies and Co est né du savoir-faire de Boulangerie Kanoun & Fils
 Derrière chaque création, il y a le même amour du fait main, le souci du détail et le goût des bonnes choses.
 Parce que chez nous, l'artisanat ne se limite pas au pain… il se décline aussi en cookies, préparés avec passion et savoir-faire.</p>
-          <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-terra"><Icon n="verified" className="!text-[18px]" /> Beurre • Œufs plein air • Farines locales</p>
         </div>
 
         {/* Navigation */}

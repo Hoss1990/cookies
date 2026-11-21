@@ -6,7 +6,7 @@ export const fmt = (n) => n.toFixed(3).replace('.', ',') + ' DT';
 
 export const PRODUCTS = [
   {
-    slug: 'croq-cafe', short: "Sablés en grains de café, au cacao amer et à l'extrait de café.", name: "Croq' Café", subtitle: 'Le Sablé Grain de Café', badge: 'Pépite du matin', badgeCls: 'bg-terra text-white',
+    slug: 'croq-cafe', short: "Sablés en grains de café, au cacao amer et à l'extrait de café.", name: "Croq' Café", subtitle: 'Le Sablé Grain de Café', badge: 'Pause café', badgeCls: 'bg-terra text-white',
     kicker: 'Pause café', cat: 'pret', price: 6, weight: '85g',
     desc: "Petits biscuits sablés façonnés en grains de café. Une texture croquante, sublimée par du cacao amer et une touche d'extrait de café.",
     tags: ['Cacao amer', 'Extrait de café', 'Beurre'], img: IMG.croqHome, gallery: [IMG.croq1, IMG.croq2],
@@ -67,12 +67,12 @@ const allergens = (ing) => {
 };
 PRODUCTS.forEach((p) => {
   p.all = allergens(p.ing);
-  p.cons = p.cons || 'Produit surgelé : à conserver au congélateur. Cuisson conseillée : 180°C, 10 à 12 minutes.';
+  p.cons = p.cons || 'Produit surgelé : à conserver au congélateur. Cuisson conseillée : 175°C, 10 à 12 minutes.';
 });
 export const bySlug = (s) => PRODUCTS.find((p) => p.slug === s);
 
 export const REVIEWS = [
   { t: "Absolutely loved these cookies! Fresh, delicious, and full of flavor. You can really taste the quality and the love that goes into making them. Every bite was amazing, and I honestly couldn’t get enough! Definitely one of my new favorites. Highly recommended ❤️❤️❤️", n: 'A.Torkhani', w: '• Tunis', c: 'bg-pop' },
   { t: "Yatik saha  tekel fi 7aja ndhifa W bnina  W en plus trab7ek fi barcha wa9t Ena team noisette ama noix badletli rayi ❤️ bravo madame sahet labden", n: 'Yassmine.Ch', w: '• Sfax', c: 'bg-coral' },
-  { t: "Bonsoir c'est très très bon merci beaucoup c'est un vrai délice 😍", n: 'Sirine.L', w: '• Tunis', c: 'bg-peri' },
+  { t: "Bonsoir c'est très très bon merci beaucoup c'est un vrai délice 😍", n: 'Sirine.L', w: '• Sfax', c: 'bg-peri' },
 ];

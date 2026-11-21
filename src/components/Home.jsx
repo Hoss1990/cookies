@@ -110,7 +110,7 @@ function Secret() {
               <h2 className="mt-5 font-display text-[30px] font-semibold leading-tight md:text-[40px]">L'odeur du cookie chaud qui sort de <span className="italic text-coral">votre propre four</span>.</h2>
               <p className="mt-4 text-vanilla/75">Recevez votre <b>Taste Me Box</b> surgelée. Disposez les 4 cookies prêts à cuire sur une plaque, Enfournez entre 10 et 12 min en fonction de la puissance de votre four. La pâte caramélise, le chocolat fond… Vous servez un biscuit tiède à la texture inégalable.</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {[['timer', '10 min chrono', 'Chaleur tournante 175°C', 'text-coral'], ['favorite', "croustillant à l'extérieur tendre à l'intérieur", 'Cœur coulant garanti', 'text-pop'], ['ac_unit', 'Surgelé', 'Prêt à enfourner', 'text-peri']].map(([ic, t, s, c]) => (
+                {[['timer', '10 min chrono', 'Chaleur tournante 175°C', 'text-coral'], ['favorite', "croustillant à l'extérieur tendre à l'intérieur", 'text-pop'], ['ac_unit', 'Surgelé', 'Prêt à enfourner', 'text-peri']].map(([ic, t, s, c]) => (
                   <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-3 transition hover:-translate-y-1 hover:bg-white/10"><Icon n={ic} fill className={c} /><p className="mt-1 text-sm font-bold">{t}</p><p className="text-[11px] text-vanilla/60">{s}</p></div>
                 ))}
               </div>
